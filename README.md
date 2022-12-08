@@ -3,7 +3,7 @@
 </p>
 
 <h1>Network Security Groups (NSGs) and Inspecting Traffic Between Azure Virtual Machines</h1>
-In this tutorial, we observe various network traffic to and from Azure Virtual Machines with Wireshark as well as experiment with Network Security Groups. <br />
+In this tutorial, we observe various network traffic to and from Azure Virtual Machines with Wireshark as well as experiment with Network Security Groups. This lab uses the two VMs (DC-1 & Client-1) setup in the previous lab titled "Active Directory with Azure", along with the created employees from that lab. <br />
 
 <h2>Environments and Technologies Used</h2>
 
@@ -20,10 +20,11 @@ In this tutorial, we observe various network traffic to and from Azure Virtual M
 
 <h2>High-Level Steps</h2>
 
-- Step 1
-- Step 2
-- Step 3
-- Step 4
+- Step 1: Login to both VMs
+- Step 2: Create 4 folders on C:\drive on DC-1 & set permissions
+- Step 3: Test permissions
+- Step 4: Create Security Group & grant additional permissions
+- Step 5: Test Security Group Members' Access
 
 <h2>Actions and Observations</h2>
 
@@ -31,7 +32,7 @@ In this tutorial, we observe various network traffic to and from Azure Virtual M
 <img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+Step 1: Remote Desktop into both VMs that were used in the previous lab (DC-1 & Client-1). These are the subject VMs that will be used again for this lab with DC-1 being the Domain Controller once again. 
 </p>
 <br />
 
@@ -39,7 +40,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 <img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+Step 2: Create four folders on DC-1's C:\drive all with different access permissions ("read-access" - permission: read, "write-access" - permission read/write", "no-access" - permission read/write, "accounting" - permission read/write) .
 </p>
 <br />
 
@@ -47,6 +48,19 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 <img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+Step 3: Log into a random employee account on Client-1 to test the newly added permissions/access created in step #2. Type \\dc-1 again into file explorer to show all shared folders created on the domain. Next, open any of the created shared folders and try to perfrom an action that does not align with the permissions used for said folder. You should not be allowed to open the folder titled "no-access" or write in the folder titled "read-access", etc.
+</p>
+<br />
+
+<p>
+<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
+Step 4: Create an Organizational Unit in Active Directory on DC-1 titled "Security Group". Next, create a new group within the OU titled "Accountants". Add Client-1's account to the list of "Accountant" members in the group (this will give the client-1 account access to the shared accountant folder created earlier).
+</p>
+<br />
+
+<p>
+Step 5: Remote Desktop back into Client-1 to access the \\dc-1 accounant folder to verify access was successfully setup and granted for this user. This is the conclusion of the lab. Thank you for viewing!
 </p>
 <br />
