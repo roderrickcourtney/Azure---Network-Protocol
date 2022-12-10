@@ -3,7 +3,7 @@
 </p>
 
 <h1>Network Security Groups (NSGs) and Inspecting Traffic Between Azure Virtual Machines</h1>
-In this tutorial, we observe various network traffic to and from Azure Virtual Machines with Wireshark as well as experiment with Network Security Groups. This lab uses the two VMs (DC-1 & Client-1) set up in the previous lab titled "Active Directory with Azure", along with the created employees from that lab. <br />
+In this tutorial, we observe various network traffic to and from Azure Virtual Machines with Wireshark as well as experiment with Network Security Groups. This lab uses the same VM set up in the previous lab titled "Active Directory with Azure". <br />
 
 <h2>Environments and Technologies Used</h2>
 
@@ -41,7 +41,7 @@ Step 1: Remote Desktop into both VMs that were used in the previous lab (DC-1 & 
 <img src="https://imgur.com/Ar3Paox.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Step 2: Create four folders on DC-1's C:\drive all with different access permissions: "read-access" - permission: read, "write-access" - permission read/write", "no-access" - permission read/write, "accounting" - permission read/write.
+Step 2: Create four folders on DC-1's C: drive all with different access permissions: "read-access" - permission: read, "write-access" - permission read/write", "no-access" - permission none, "accounting" - permission read/write.
 </p>
 <br />
 
@@ -49,7 +49,7 @@ Step 2: Create four folders on DC-1's C:\drive all with different access permiss
 <img src="https://imgur.com/y5byjxa.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Step 3: Log into a random employee account on Client-1 to test the newly added permissions/access created in step #2. Type \\dc-1 again into file explorer to show all shared folders created on the domain. Next, open any of the created shared folders and try to perfrom an action that does not align with the permissions used for said folder. You should not be allowed to open the folder titled "no-access" or write in the folder titled "read-access", etc.
+Step 3: Log into a random employee account on Client-1 to test the newly added permissions/access created in step #2. Type "\\dc-1" into file explorer to show all shared folders created on the domain in step #2. Next, click any of the created shared folders and try to perfrom an action that does not align with the permissions used for said folder. You should not be allowed to open the folder titled "no-access" or write in the folder titled "read-access", etc.
 </p>
 <br />
 
@@ -57,7 +57,7 @@ Step 3: Log into a random employee account on Client-1 to test the newly added p
 <img src="https://imgur.com/xSXLxLo.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Step 4: Create an Organizational Unit (OU) in Active Directory on DC-1 titled "Security Group". Next, create a new group within the OU titled "Accountants". Add Client-1's account to the list of "Accountant" members in the group (this will give the client-1 account access to the shared accountant folder created earlier).
+Step 4: Create an "Organizational Unit" (OU) in Active Directory on DC-1 titled "Security Group". Next, create a new group within the OU titled "Accountants". Add Client-1's account to the list of "Accountant" members in the group (this will give the client-1 account access to the shared accountant folder created earlier).
 </p>
 <br />
 
@@ -65,6 +65,6 @@ Step 4: Create an Organizational Unit (OU) in Active Directory on DC-1 titled "S
 <img src="https://imgur.com/FLEB0F4.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Step 5: Restart "Client-1" to allow the new permission settings to enable. Next access the shared "accountant" folder in \\dc-1  to verify access was successfully setup and granted for this user/employee. This is the conclusion of the lab. Thank you for viewing!
+Step 5: Restart Client-1 to allow the new permission settings to enable. Next access the shared "accountant" folder in \\dc-1  to verify access was successfully set up and granted for this user/employee. This is the conclusion of the lab.
 </p>
 <br />
