@@ -2,16 +2,16 @@
 <img src="https://i.imgur.com/Ua7udoS.png" alt="Traffic Examination"/>
 </p>
 
-<h1>Network Security Groups (NSGs) and Inspecting Traffic Between Azure Virtual Machines</h1>
-In this tutorial, we observe various network traffic to and from Azure Virtual Machines with Wireshark as well as experiment with Network Security Groups. This lab uses the same VM setup in the previous lab titled "Active Directory with Azure". <br />
+<h1>Assigning File Permissions in Azure Virtual Machines</h1>
+In this tutorial, we will practice setting up different file permissions and access (on a domain) to different users within different groups. This is all done within Active Directory on our CLient Virtual Machine in Azure. <br />
 
 <h2>Environments and Technologies Used</h2>
 
 - Microsoft Azure (Virtual Machines/Compute)
 - Remote Desktop
-- Various Command-Line Tools
-- Various Network Protocols (SSH, RDP, DNS, HTTP/S, ICMP)
-- Wireshark (Protocol Analyzer)
+- Active Directory
+- File Permissions
+- Security Groups
 
 <h2>Operating Systems Used </h2>
 
