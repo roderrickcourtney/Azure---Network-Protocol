@@ -3,7 +3,7 @@
 </p>
 
 <h1>Assigning File Permissions in Azure Virtual Machines</h1>
-In this tutorial, we will practice setting up different file permissions and access (on a domain) for different users within different groups. This is all done within Active Directory on our CLient Virtual Machine in Azure. <br />
+In this tutorial, we will practice setting up different file permissions and access (on a domain) for different users within different groups. This is all done within Active Directory on our Client Virtual Machine in Azure. <br />
 
 <h2>Environments and Technologies Used</h2>
 
